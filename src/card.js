@@ -23,8 +23,23 @@ function createDeck(cards) {
     return deck;
 }
 
+function countCards(deck) {
+    return deck.length;
+}
+
+function createRound(deck) {
+    return {
+        deck: deck,
+        currentCard: deck[0],
+        turns: 0,
+        incorrectGuesses: []
+    }
+}
+
 module.exports = {
     createCard,
     evaluateGuess,
-    createDeck
+    createDeck,
+    countCards,
+    createRound
 }
