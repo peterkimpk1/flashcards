@@ -15,7 +15,16 @@ function evaluateGuess(guess,correctAnswer) {
         return `incorrect!`
     }
 }
+function createDeck(cards) {
+    let deck = []
+    cards.forEach(card => {
+        deck.push(card)
+    })
+    return deck;
+}
+
 module.exports = {
     createCard,
-    evaluateGuess
+    evaluateGuess,
+    createDeck
 }
