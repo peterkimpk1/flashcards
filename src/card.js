@@ -36,10 +36,23 @@ function createRound(deck) {
     }
 }
 
+function takeTurn(guess, round) {
+    round.turns += 1;
+    round.currentCard = round.deck[round.turns]
+    if (guess === round.currentCard.correctAnswer) {
+       return `Correct.`
+    }
+    else {
+        round.incorrectGuesses.push(round.deck[round.turns-1].id)
+        return `Incorrect.`
+    }
+}
+
 module.exports = {
     createCard,
     evaluateGuess,
     createDeck,
     countCards,
-    createRound
+    createRound,
+    takeTurn
 }
