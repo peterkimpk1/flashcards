@@ -9,5 +9,16 @@ describe ('createDeck',() => {
         const thirdCard = createCard(4, "When will I be a wizard?", ['in 2 years','in 5 years','never','in 50 years'],'never');
         const deck = createDeck([firstCard,secondCard,thirdCard]);
         expect(deck).to.be.an('array').that.includes(thirdCard)
-    })
-})
+    });
+});
+
+describe ('countCards', () => {
+    it('should be able to count the amount of cards in the deck', () => {
+        const firstCard = createCard(1, "What is life", [1,42,7,'idk'], 42);
+        const secondCard = createCard(2, "When will I finish this project?", ['wednesday','thursday','tuesday','never'],'wednesday');
+        const thirdCard = createCard(4, "When will I be a wizard?", ['in 2 years','in 5 years','never','in 50 years'],'never');
+        const deck = createDeck([firstCard,secondCard,thirdCard]);
+        const cardCount = countCards(deck)
+        expect(cardCount).to.equal(3)
+    });
+});
