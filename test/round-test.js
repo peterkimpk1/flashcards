@@ -1,6 +1,7 @@
 const chai = require('chai')
 const expect = chai.expect
-const {createCard, createDeck, createRound, takeTurn, calculatePercentCorrect, endRound} = require('../src/card')
+const {createCard, createDeck, createRound,} = require('../src/card')
+const {takeTurn, calculatePercentCorrect, endRound} = require('../src/round')
 
 describe ('createRound', () => {
     var firstCard, secondCard, thirdCard, deck, round
